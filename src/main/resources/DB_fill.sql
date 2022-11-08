@@ -31,8 +31,8 @@ INSERT INTO TimeSlot ("event_id" ,  "start_date" , "finish_date" , "place_id") V
     (5, '2022-07-19','2022-07-24',5),
     (6, '2022-07-19','2022-07-25',6);
 
-INSERT INTO t_role(id, name)
-VALUES (1, 'ROLE_USER'), (2, 'ROLE_ADMIN');
-
-INSERT INTO t_role(id, name)
-VALUES (3, 'ROLE_MANAGER');
+-- INSERT INTO t_role(id, name)
+-- VALUES (1, 'ROLE_USER'), (2, 'ROLE_ADMIN');
+--
+-- INSERT INTO t_role(id, name)
+-- VALUES (3, 'ROLE_MANAGER');
