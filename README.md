@@ -14,3 +14,8 @@ Technologies used in this app:
 - Maven
 - Lombok
 - PostgreSQL
+
+Technology implementation plan after MVP:
+- Turn off Thymeleaf. Use Swagger. REST API only.
+- Spring Security
+- Docker
