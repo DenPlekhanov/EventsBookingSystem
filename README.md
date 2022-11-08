@@ -18,4 +18,5 @@ Technologies used in this app:
 Technology implementation plan after MVP:
 - Turn off Thymeleaf. Use Swagger. REST API only.
 - Spring Security
+- Refactoring to a thread-safe application
 - Docker
