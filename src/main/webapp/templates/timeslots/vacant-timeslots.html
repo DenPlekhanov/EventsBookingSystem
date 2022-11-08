@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List of RequestedDocumentTypes</title>
+</head>
+<body>
+<p><b>List of Time Slots:</b></p>
+<hr>
+<div th:each="each : ${timeslots}">
+    <!--    <a th:href="@{/timeslots/{id}(id=${each.getId()})}" th:text="'ID : ' + ${each.getId()}">VALUE</a>-->
+    <a th:href="@{/timeslots/{id}(id=${each.getId()})}" th:text="'ID : ' + ${each.getId()} +
+    ' Event Id : ' + ${each.getEventId()} +
+    ' Place Id : ' + ${each.getPlaceId()} +
+    ' Start Date : ' + ${each.getStartDate()} +
+    ' Finish Date : ' + ${each.getFinishDate()}">VALUE</a>
+</div>
+<hr>
+<!--<form action="/timeslots/new">-->
+<!--    <input type="submit" value="Create New RequestedDocumentType"/>-->
+<!--</form>-->
+<form action="/timeslots/vacant-timeslots">
+    <input type="submit" value="Refresh"/>
+</form>
+<form action="/timeslots">
+    <input type="submit" value="Back to all Timeslots"/>
+</form>
+</body>
+</html>

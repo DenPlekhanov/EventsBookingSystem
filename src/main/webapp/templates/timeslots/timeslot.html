@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>RequestedDocumentType card</title>
+</head>
+<body>
+<p><b>Timeslot card:</b></p>
+<hr>
+<p th:text="'ID : ' + ${timeslot.getId}">VALUE</p>
+<p th:text="'Place ID : ' + ${timeslot.getPlaceId}">VALUE</p>
+<p th:text="'Start Date : ' + ${timeslot.getStartDate}">VALUE</p>
+<p th:text="'Finish Date : ' + ${timeslot.getFinishDate}">VALUE</p>
+
+<form th:action="@{/timeslots/{id}(id=${timeslot.getId()+'/edit'})}">
+    <input type="submit" value="Edit"/>
+</form>
+
+<form th:action="@{/timeslots/{id}(id=${timeslot.getId()+'/split-timeslot'})}">
+    <input type="submit" value="Split Timeslot"/>
+</form>
+
+<form th:method="delete" th:action="@{/timeslots/{id}(id=${timeslot.getId()})}">
+    <input type="submit" value="Delete"/>
+    <br>
+</form>
+
+<hr>
+<form action="/timeslots">
+    <input type="submit" value="Back to Timeslots list"/>
+</form>
+</body>
+</html>

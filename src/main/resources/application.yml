@@ -1,0 +1,26 @@
+spring:
+  mvc:
+#    view:
+#      prefix: classpath:/templates/
+    hiddenmethod:
+      filter:
+        enabled: true
+  thymeleaf:
+#    prefix: "classpath:/templates/"
+    prefix: "templates/"
+    suffix: ".html"
+
+  datasource:
+#    Swagger properties:
+#    url: "jdbc:postgresql://localhost:5434/EventBookingSystem_DB"
+#    username: "root"
+#    password: "root"
+
+#    Local properties:
+    url: "jdbc:postgresql://localhost:5432/EventBookingSystem_DB"
+    username: "postgres"
+    password: "123321"
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: "update"

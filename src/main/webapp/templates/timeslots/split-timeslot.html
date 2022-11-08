@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Edit RequestedDocumentType card</title>
+</head>
+<body>
+<p><b>Split Timeslot:</b></p>
+<hr>
+<form th:method="put" th:action="@{/timeslots/{id}(id=${timeslot.getId()})}" th:object="${timeslot}">
+    <p th:text="'ID of Timeslot to split : ' + ${timeslot.getId}">VALUE</p>
+    <p th:text="'Start date of Timeslot to split : ' + ${timeslot.getStartDate}">VALUE</p>
+    <p th:text="'Finish date of Timeslot to split : ' + ${timeslot.getFinishDate}">VALUE</p>
+
+    <label for="startdate">Edit start date : </label>
+    <input name="startdate" type="datetime-local" th:field="*{startDate}" id="startdate"/>
+    <br>
+
+    <label for="finishdate">Edit finish date : </label>
+    <input name="finishdate" type="datetime-local" th:field="*{finishDate}" id="finishdate"/>
+    <br>
+    <input type="submit" value="Split Timeslot"/>
+</form>
+<form action="/timeslots">
+    <input type="submit" value="Back to Timeslots list"/>
+</form>
+</body>
+</html>
