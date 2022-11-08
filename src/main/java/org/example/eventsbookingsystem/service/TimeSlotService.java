@@ -36,8 +36,7 @@ public class TimeSlotService {
 //        return repository.
 
     public void /*List<TimeSlot>*/ splitTimeSlot(long slotToSplitId, Date newSlotStartDate, Date newSlotFinishDate) {
-        //TODO Узнать делать ли копию объекта TimeSlot из параметра или работать так...
-        //TODO Добавить проверку корректности параметров
+        //TODO Добавить валидацию
         TimeSlot sourceTimeSlot = repository.getReferenceById(slotToSplitId);
         List<TimeSlot> newTimeSlotsList = new ArrayList<>();
         TimeSlot newBeforeTimeSlot = null;
@@ -98,7 +97,7 @@ public class TimeSlotService {
             newTimeSlotsList.add(newAfterTimeSlot);
         }
         saveOrUpdate(newTimeSlotsList);
-        repository.flush();//TODO Узнать обязательно ли делать flush
+        repository.flush();
     }
 
     public List<TimeSlot> saveOrUpdate(List<TimeSlot> timeSlotsListToSaveOrUpdate) {

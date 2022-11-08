@@ -38,9 +38,6 @@ public class TimeSlotController {
 
     @PutMapping ("/{id}")
     public String splitTimeslot(@ModelAttribute("timeslot") TimeSlot timeSlot, @PathVariable("id") long slotToSplitId, @ModelAttribute("startdate") Date startDate2, @ModelAttribute("finishdate") Date finishDate2) {
-        //TODO Разобраться с аннотациями @ModelAttribute и @PathVariable
-        //TODO В startDate и finishDate почему-то приходит текущее время. (парсер через аннотацию в сущности не справляется?!)
-
         Date startDate = timeSlot.getStartDate();
         Date finishDate = timeSlot.getFinishDate();
         service.splitTimeSlot(slotToSplitId, startDate, finishDate);
